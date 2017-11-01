@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="css/bootstrap.min.css">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href="./css.css">
+        <link rel="stylesheet" type="text/css" href=" https://fonts.googleapis.com/earlyaccess/notosanstc.css">
+        
+        <title>李佳勳</title>
+    </head>
+    
+    <body>
+            <!--<div id="map"></div>-->
+            
+            <div class="context">
+                <div id="topic"><strong>臺灣在地農產地圖</strong></div>
+                <div class="left">
+                    <div class="select">
+                    `   <div class="choose">
+                            <div class="word">類型</div>
+                            <select  id="menu"class="selectpicker show-tick" >
+                                <option value="1">水果</option>
+                                <option value="2">蔬菜</option>
+                            </select>
+                        </div>
+                        <button id="btn1" type="button">依季節</button>
+                        <button id="btn2"type="button">依種類</button>    
+                        <div  class="choose1">
+                            <div id="ways" class="word"><text>種類</text></div>
+                            <select id="menu2">
+                                <option value="9">漿果類</option>
+                                <option value="10">柑橘類</option>
+                                <option value="11">葡萄類</option>
+                                <option value="12">核果類</option>
+                                <option value="13">仁果類</option>
+                                <option value="14">瓜類</option>
+                                <option value="15">其他</option>
+                                
+                            </select>  
+                        </div>
+                        <div class="choose3">
+                            <div class="word">品項</div>
+                            <select id="submenu">
+                            </select>  
+                        </div>
+                    </div>
+                </div>
+                <div class="middle">
+                    
+                </div>
+                <div class="right">
+                    <div id="countyname">臺南市 東區</div>
+                    <div id="rightintro"><strong>蔬果產地與月份地圖</strong></div>
+                    <div id="rightintro_small">可縮放地圖觀看</div>
+                    <div id="map"></div>
+                </div>
+                <!--<div class="bar2"></div>
+                <div class="price"></div>
+                <div class="right">
+                     <div id="map"></div>
+                </div>-->
+        
+            </div>
+       
+            
+            
+            <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript"src="http://d3js.org/d3.v3.min.js"></script>
+            <script type="text/javascript"src="http://d3js.org/topojson.v1.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script type="text/javascript" src="./TOWN_MOI_1060525.json"></script>
+            <script type="text/javascript"src="./pratice.js"></script>
+            <script type="text/javascript"src="./bar_line.js"></script>
+            
+    </body>
+ </html>
