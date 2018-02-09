@@ -1,3 +1,69 @@
 .county {
     stroke-width:0;
 }
+.text{
+    font-family: 'Noto Sans TC', sans-serif;
+    
+}
+.title{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 10px;
+}
+.second-title{
+    font-size: 18px;
+    text-align: center;
+    color: #949292;
+}
+.left{
+    height: 600px;
+    float: left;
+    display: inline-block;
+}
+.right{
+    height: 600px;
+    display: inline-block;
+    width:800px;
+}
+.context{
+    height: 280px;
+    width: 800px;
+    padding-top:100px;
+    text-align: center;
+    line-height: 28px;
+    letter-spacing: 1px;
+}
+
+.data{
+   
+    height: 220px;
+    vertical-align: bottom;
+}
+#countyname{
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 25px;
+    color: #515151;
+}
+#map{
+    height: 600px;
+    width: 500px;
+    
+}
+#population ,#doctor ,#serve,#rank{
+    letter-spacing: 2px;
+    color: #9F9D9D;
+}
+#serve, #rank{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    color: #777575;
+}
+.important{
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color:#F75353;
+}
