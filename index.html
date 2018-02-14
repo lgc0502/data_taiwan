@@ -8,56 +8,71 @@
         <link rel="stylesheet" type="text/css" href="./css.css">
         <link rel="stylesheet" type="text/css" href=" https://fonts.googleapis.com/earlyaccess/notosanstc.css">
         <!--<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <title>醫療資源問題</title>
     </head>
     
     <body>
-                <div class="text title">看病路遙遙</div>
-                <div class="text second-title">-淺談台灣醫療資源不均問題-</div>
-                <div class="left">
-                    <div id="map"></div>
-                   
+            
+        <div class="text title">看病路遙遙</div>
+        <div class="text second-title">-淺談台灣醫療資源不均問題-</div>
+        <p class="text">
+                <br>通常，在探討醫療資源差異問題時，會先討論病床數和醫事人員數<br>
+                根據衛福部醫療服務量統計資料，台北市醫療資源最充足，其次是嘉義市和花蓮縣。<br>
+        </p>
+        
+        <div class="block1">     
+            <div class="left">
+                <div id="map"></div>   
+            </div>
+            <div class="middle">    
+                <div class="data">
+                        <button type="button" class="btn btn-outline-warning text" >病床數</button>
+                        <button type="button" class="btn btn-outline-info text" >醫事人數</button>
+                    <div class="text" id="countyname">臺北市 </div>
+                    <div class="text" id="population">人口數量 : 2695704人</div>
+                    <div class="text" id="doctor">醫師數量 : 9719人</div>       
+                    <div class="text" id="serve">每位醫生服務人數<div class="text important" id="servenum">277.36人</div></div>
+                    <div class="text" id="rank">排名(由資源多到少)<div class="text important" id="ranknum">1/22</div></div>
                 </div>
-                <div class="right"> 
-                    
-                    <div class="context text">
-                        
-                            暫放
-                            全台有19個鄉鎮屬於無醫療鄉，光是看病就得跑大老遠！<br>
-                            國內的醫療資源分布有多不平均，<br>
-                            從醫師公會全聯會所公布的調查來看，<br>
-                            全台有19個鄉鎮為醫療資源缺乏地區，<br>
-                            一名醫師就得照顧6千多名居民。<br>
-                            但反觀台北市，則醫療資源過剩，每位醫師照顧居民人數不到3百人，<br>
-                            像是台大醫院所在的中正區，一名醫師只需服務1百位居民。<br>
-                    </div>   
-                    <div class="data">
-                        <div class="text" id="countyname">臺北市 </div>
-                        <div class="text" id="population">人口數量 : 2695704人</div>
-                        <div class="text" id="doctor">醫師數量 : 9719人</div>
-                        
-                        <div class="text" id="serve">每位醫生服務人數<div class="text important" id="servenum">277.36人</div></div>
-                        <div class="text" id="rank">排名(由服務人數多到少)<div class="text important" id="ranknum">22/22</div></div>
-                    </div>
-                </div>
+            </div>
+            <div class="right"> 
+                <div class="bubble"></div>    
+                <!--<div class="context text">        
+                    暫放<br>
+                    全台有19個鄉鎮屬於無醫療鄉，光是看病就得跑大老遠！<br>
+                    國內的醫療資源分布有多不平均，<br>
+                    從醫師公會全聯會所公布的調查來看，<br>
+                    全台有19個鄉鎮為醫療資源缺乏地區，<br>
+                    一名醫師就得照顧6千多名居民。<br>
+                    但反觀台北市，則醫療資源過剩，每位醫師照顧居民人數不到3百人，<br>
+                    像是台大醫院所在的中正區，一名醫師只需服務1百位居民。<br>
+                </div> -->  
                 
-                <!--<div class="bar2"></div>
-                <div class="price"></div>
-                <div class="right">
-                     <div id="map"></div>
-                </div>-->
+            </div>
+        </div> 
+        <div class="block2">
+            <div class="left"></div>
+            <div class="middle"></div>
+            <div class="right"></div>
+
+        </div>
+
         
             </div>
-       
-            
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            <script type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
             <script type="text/javascript"src="https://d3js.org/d3.v3.min.js"></script>
             <script type="text/javascript"src="https://d3js.org/topojson.v1.min.js"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.9.1/d3.min.js"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
             <script type="text/javascript" src="./COUNTY_MOI_1060525.json"></script>
             <script type="text/javascript"src="./pratice.js"></script>
-            <script type="text/javascript"src="./bar_line.js"></script>
+            <script type="text/javascript"src="./Hospital.js"></script>
+            
             
     </body>
  </html>

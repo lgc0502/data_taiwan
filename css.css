@@ -1,7 +1,19 @@
 .county {
     stroke-width:0;
 }
-.text{
+p{
+    text-align: center;
+}
+/*svg:nth-child(1){
+    margin-left:100px;
+}*/
+button{
+    margin-top:50px;
+    z-index: 100;
+    position: relative;
+    
+}
+.text ,text{
     font-family: 'Noto Sans TC', sans-serif;
     
 }
@@ -17,24 +29,43 @@
     color: #949292;
 }
 .left{
-    height: 600px;
+    height: 400px;
     float: left;
     display: inline-block;
+    
+}
+.block2 .left{
+    width:100px;
 }
 .right{
     height: 600px;
+   /* display: inline-block;*/
+    width:100px;
+    float:right;
+
+}
+.bubble{
+    height: 600px;
+    width:500px;
+}
+.middle{
     display: inline-block;
-    width:800px;
+    width:300px;
+    padding-top:100px;
+    padding-left: 100px;
+    height: 400px;
 }
 .context{
     height: 280px;
-    width: 800px;
+    
     padding-top:100px;
     text-align: center;
     line-height: 28px;
     letter-spacing: 1px;
 }
-
+.block1{
+    height:400px;
+}
 .data{
    
     height: 220px;
@@ -47,8 +78,9 @@
     color: #515151;
 }
 #map{
-    height: 600px;
-    width: 500px;
+    height: 400px;
+    width: 700px;
+   /* margin-left:100px;*/
     
 }
 #population ,#doctor ,#serve,#rank{
