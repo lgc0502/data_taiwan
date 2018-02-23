@@ -17,17 +17,17 @@ d3.csv(datapath,function(dataset){
     .attr('width', 700)
     .attr('transform', 'translate(0,0)')
     
-    var option = d3.select('.option')
+   /* var option = d3.select('.option')
     .append('svg')
     .attr('height',30)
-    .attr('width',100)
+    .attr('width',100)*/
 
-    var choose = option.append('g')
+   /* var choose = option.append('g')
     .selectAll('circle')
     .data(2)
     .enter()
     .append('circle')
-    .attr('r',5)
+    .attr('r',5)*/
     var color = d3.scale.linear().domain([200,1600]).range(["#FFFFFF","#003377"]);
     //var fisheye = d3.fisheye.circular().radius(100).distortion(2);  
     /*var zoom = d3.behavior.zoom()
@@ -60,7 +60,7 @@ d3.csv(datapath,function(dataset){
             }
         }
     }
-    console.log(features);
+    //console.log(features);
     var map = svg.append('g')
         .attr('transform', 'translate(120,-80)')
         //.call(zoom)
@@ -95,25 +95,49 @@ d3.csv(datapath,function(dataset){
         })
             //
     d3.select('button:nth-child(2)').on('click', function () {
-        
+        color = d3.scale.linear().domain([200,1600]).range(["#FFFFFF","#003377"]);
+        $("#countyname")    .text("臺北市");
+        $("#population")    .text("人口數量 : 2695704人");
+        $("#doctor")    .text("醫師數量 : 9719人");
+        $("#serve")    .text("每位醫生服務人數");
+        $("#servenum")    .text("277.36人");
+        $("#ranknum").text("1/22");
+        d3.selectAll('.county')
+        .data(features)
+        .attr('fill', function (d) {
+                return color(d.properties.density);
+        })
+        .on("click", function (d) {
+            d3.select(this).style('stroke-width', '2');
+            d3.select(this).style('stroke', '#FB7F7F');
+            $("#countyname").text(d.properties.COUNTYNAME);
+            $("#population").text("人口數量 : "+d.properties.population+"人");
+            $("#doctor")    .text("醫師數量 : "+d.properties.doctor+"人");
+            $("#servenum")     .text(d.properties.density+"人");
+            $("#ranknum").text(d.properties.rank+"/22");
+        })
     });
     d3.select('button:nth-child(1)').on('click', function () {
-        color = d3.scale.linear().domain([0,600]).range(["#FFFFFF","#003377"]);
-        $("#doctor")    .text("病床數量 : ");
+        color = d3.scale.linear().domain([50,400]).range(["#FFFFFF","#003377"]);
+        $("#countyname")    .text("臺北市");
+        $("#population")    .text("人口數量 : 2695704人");
+        $("#doctor")    .text("病床數量 : 19951床");
+        $("#serve")    .text("一張病床提供幾人使用");
+        $("#servenum")    .text("135.11人");
+        $("#ranknum").text("4/22");
         d3.selectAll('.county')
         .data(features)
         .attr('fill', function (d) {
                 return color(d.properties.average);
             })
         .on("click", function (d) {
-
             d3.select(this).style('stroke-width', '2');
             d3.select(this).style('stroke', '#FB7F7F');
             $("#countyname").text(d.properties.COUNTYNAME);
             $("#population").text("人口數量 : "+d.properties.population+"人");
-            $("#doctor")    .text("病床數量 : "+d.properties.doctor+"人");
-            $("#servenum")     .text(d.properties.density+"人");
-            $("#ranknum").text(d.properties.rank+"/22");
+            $("#doctor")    .text("病床數量 : "+d.properties.bed+"床");
+            $("#servenum")     .text(d.properties.average+"人");
+            $("#ranknum").text(d.properties.rank2+"/22");
         })
     });
 });

@@ -19,7 +19,6 @@
         <div class="text second-title">-淺談台灣醫療資源不均問題-</div>
         <p class="text">
                 <br>通常，在探討醫療資源差異問題時，會先討論病床數和醫事人員數<br>
-                根據衛福部醫療服務量統計資料，台北市醫療資源最充足，其次是嘉義市和花蓮縣。<br>
         </p>
         
         <div class="block1">     
@@ -28,38 +27,103 @@
             </div>
             <div class="middle">    
                 <div class="data">
-                        <button type="button" class="btn btn-outline-warning text" >病床數</button>
+                        <button type="button" class="btn btn-outline-info text" >病床數</button>
                         <button type="button" class="btn btn-outline-info text" >醫事人數</button>
                     <div class="text" id="countyname">臺北市 </div>
                     <div class="text" id="population">人口數量 : 2695704人</div>
                     <div class="text" id="doctor">醫師數量 : 9719人</div>       
-                    <div class="text" id="serve">每位醫生服務人數<div class="text important" id="servenum">277.36人</div></div>
-                    <div class="text" id="rank">排名(由資源多到少)<div class="text important" id="ranknum">1/22</div></div>
+                    <div class="text" id="serve">每位醫生服務人數</div><div class="text important" id="servenum">277.36人</div>
+                    <div class="text" id="rank">排名(由資源多到少)</div><div class="text important" id="ranknum">1/22</div>
                 </div>
             </div>
-            <div class="right"> 
-                <div class="bubble"></div>    
-                <!--<div class="context text">        
-                    暫放<br>
-                    全台有19個鄉鎮屬於無醫療鄉，光是看病就得跑大老遠！<br>
-                    國內的醫療資源分布有多不平均，<br>
-                    從醫師公會全聯會所公布的調查來看，<br>
-                    全台有19個鄉鎮為醫療資源缺乏地區，<br>
-                    一名醫師就得照顧6千多名居民。<br>
-                    但反觀台北市，則醫療資源過剩，每位醫師照顧居民人數不到3百人，<br>
-                    像是台大醫院所在的中正區，一名醫師只需服務1百位居民。<br>
-                </div> -->  
-                
+            <div class="right">  
             </div>
         </div> 
-        <div class="block2">
-            <div class="left"></div>
-            <div class="middle"></div>
-            <div class="right"></div>
 
+            <table class="text">
+                <thead>
+                <tr>
+                    <th colspan="3" >擁有最多資源之縣市排名</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>    </td>
+                    <td><strong>醫事人員</strong></td>
+                    <td><strong>病床</strong></td>
+                </tr>
+                <tbody>
+                <tr>
+                    <td>第一名</td>
+                    <td>台北市</td>
+                    <td>嘉義市</td>
+                </tr>
+                <tr>
+                    <td>第二名</td>
+                    <td>嘉義市</td>
+                    <td bgcolor="#F8D4D4">花蓮縣</td>
+                </tr>
+                <tr>
+                    <td>第三名</td>
+                    <td bgcolor="#F8D4D4">花蓮縣</td>
+                    <td bgcolor="#F8D4D4">宜蘭縣</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="text">
+                <thead>
+                <tr>
+                    <th colspan="3" >擁有最少資源之縣市排名</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>    </td>
+                    <td><strong>醫事人員</strong></td>
+                    <td><strong>病床</strong></td>
+                </tr>
+                <tbody>
+                <tr>
+                    <td>倒數第一</td>
+                    <td>金門縣</td>
+                    <td>金門縣</td>
+                </tr>
+                <tr>
+                    <td>倒數第二</td>
+                    <td>新竹縣</td>
+                    <td>屏東縣</td>
+                </tr>
+                <tr>
+                    <td>倒數第三</td>
+                    <td>苗栗縣</td>
+                    <td bgcolor="#F8D4D4">新北市</td>
+                </tr>
+                </tbody>
+            </table>
+        <div class="block2 text">
+           <p>
+                <br>綜合以上統計資料，嘉義市醫療資源最充足，讓人意外的是第二名居然是花蓮縣。<br>
+           </p>
         </div>
-
-        
+        <div class="block3 text">
+            <!--<p>	醫療機構：依據衛生福利部網站/醫院評鑑合格名單，本會彙整評鑑合 格醫院之健保特約類別，層級分為「醫學中心」、「區域醫院」、「地 區醫院」及「新制精神科醫院」；及未經評鑑之「醫院」、「診所」及 「行政機關」等共計七類。
+                </p>-->
+            <div class="left">
+                <button type="button" class="btn btn-outline-danger text" value="1" >醫學中心</button>
+                <div class="detail">具有研究、教學訓練、精密診斷、高度醫療等多種功能外，還負有輔導、
+                    協助區域內其他醫療機構的責任，並且需通過設有醫學中心數量限制的醫院評鑑</div>
+                <button type="button" class="btn btn-outline-warning text" value="2">區域醫院</button>
+                <div class="detail">應具教學醫院功能，建立健全住院醫生訓練制度，並培育專科醫生和地區醫院所需人力。</div>
+                <button type="button" class="btn btn-outline-success text" value="3">地區醫院</button>
+                <div class="detail">提供一般專科門診及住院服務。急性一般病床需20床以上，且急性一般病床與急性精神病床合計99床（含）以下。</div>
+                <button type="button" class="btn btn-outline-info text" value="4">醫院</button>
+                <div class="detail">未經評鑑之醫院</div>
+                <button type="button" class="btn btn-outline-primary text" value="5">診所</button>
+                
+            </div>
+            <div class="bar"> </div>
+        </div>
+        <h1></h1>
             </div>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
