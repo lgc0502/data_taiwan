@@ -3,6 +3,7 @@
 }
 p{
     text-align: center;
+    letter-spacing: 2px;
 }
 /*svg:nth-child(1){
     margin-left:100px;
@@ -13,20 +14,27 @@ button{
     position: relative;
     
 }
-.text ,text{
+.chart-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.text ,text,p{
     font-family: 'Noto Sans TC', sans-serif;
     
 }
 .title{
-    font-size: 35px;
+    font-size:50px;
     font-weight: bold;
     text-align: center;
     letter-spacing: 10px;
+    
 }
 .second-title{
-    font-size: 18px;
+    font-size: 25px;
+    letter-spacing: 2px;
     text-align: center;
     color: #949292;
+    
 }
 .left{
     height: 400px;
@@ -34,15 +42,29 @@ button{
     display: inline-block;
     
 }
+.block1{
+    margin-top:100px;
+    margin-bottom: 100px;
+}
 .block2 {
-    margin-top: 350px;
+    margin-top: 400px;
+    margin-bottom: 100px;
 }
 .block2 .left{
     width:100px;
 }
+
+.block2 .important{
+    font-size:18px;
+
+}
 .block3{
     height:600px;
     margin:50px;
+}
+.block3 p{
+    font-size: 25px;
+    font-weight: bold; 
 }
 .right{
     height: 600px;
@@ -120,10 +142,10 @@ td{
     color: #676666;
 }
 th{
-    font-weight: normal;
-    line-height: 50px;
+    font-weight: bold;
+    line-height: 60px;
     color: #0C8289;
-    font-size: 18px;
+    font-size: 25px;
     
 }
 .block3 .btn{
