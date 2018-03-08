@@ -168,3 +168,13 @@ th{
     float:right;
     color:#12BFF4;
 }
+#googleMap {
+    height:700px;
+    width:40%;
+    margin-left:8%;
+  }
+.block4{
+    margin-top:100px;
+    margin-bottom: 100px;
+    color:#A1A1A1
+}

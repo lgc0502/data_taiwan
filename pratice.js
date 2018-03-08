@@ -11,7 +11,7 @@ var margin = {
 
 var datapath = "./data.csv"
 d3.csv(datapath,function(dataset){
-    var svg = d3.select('#map')
+    var svg = d3.select('#map1')
     .append('svg')
     .attr('height', 400)
     .attr('width', 700)
