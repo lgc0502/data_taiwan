@@ -1,4 +1,11 @@
-
+var screenwidth=screen.width;
+if(screenwidth<450){
+    var zoom=7;
+}else if(screenwidth<800){
+    var zoom=7.5;
+}else{
+    var zoom=8;
+}
 var styledMapType = new google.maps.StyledMapType(
     [
       {elementType: 'geometry', stylers: [{color: '#A1A1A1'}]},
@@ -128,27 +135,15 @@ var styledMapType = new google.maps.StyledMapType(
     datapath = "./position.csv"
 
 d3.csv(datapath,function(dataset){
-    var icon = {
-        url: './hos.png',
-        // This marker is 20 pixels wide by 32 pixels high.
-        size: new google.maps.Size(20, 20),
-        // The origin for this image is (0, 0).
-        origin: new google.maps.Point(10, 10),
-        // The anchor for this image is the base of the flagpole at (0, 32).
-        anchor: new google.maps.Point(0, 32)
-      };
-      var shape = {
-        coords: [1, 1, 1, 20, 18, 20, 18, 1],
-        type: 'poly'
-      };
+    
     var myLatLng = [];
     for(var i=0;i<101;i++){
         myLatLng[i]={lat: +dataset[i].lat, lng: +dataset[i].lng}
     }
-    console.log(myLatLng);
+
     var map = new google.maps.Map(document.getElementById('googleMap'), {
         center: {lat: 23.58, lng: 121.0},
-        zoom: 8,
+        zoom: zoom,
         mapTypeControlOptions: {
           mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain',
                   'styled_map']
@@ -161,15 +156,7 @@ d3.csv(datapath,function(dataset){
         var marker = new google.maps.Marker({
                     map: map,
                     position: myLatLng[i],
-                   // icon:icon,
-                    //shape:shape,
                     title:dataset[i].hospital
                 });
     }
-    
-    /*var marker = new google.maps.Marker({
-      position: myLatLng[1],
-      map: map,
-      title: 'Hello World!'
-    });*/
 })

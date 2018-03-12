@@ -1,121 +1,24 @@
-.county {
-    stroke-width:0;
-}
-p{
-    text-align: center;
+/**********css for text************/
+.text,p{
+    font-family: 'Noto Sans TC', sans-serif;  
+    text-align: center; 
     letter-spacing: 2px;
 }
-/*svg:nth-child(1){
-    margin-left:100px;
-}*/
-button{
-    margin-top:50px;
-    z-index: 100;
-    position: relative;
-    
-}
-.chart-title{
-    font-size: 25px;
-    font-weight: bold;
-}
-.text ,text,p{
-    font-family: 'Noto Sans TC', sans-serif;
-    
+p{
+    margin-left: 8px;
+    margin-right:8px;
 }
 .title{
     font-size:50px;
     font-weight: bold;
     text-align: center;
     letter-spacing: 10px;
-    
 }
 .second-title{
     font-size: 25px;
     letter-spacing: 2px;
-    text-align: center;
-    color: #949292;
-    
-}
-.left{
-    height: 400px;
-    float: left;
-    display: inline-block;
-    
-}
-.block1{
-    margin-bottom: 100px;
-}
-.block2 {
-    margin-top: 400px;
-    margin-bottom: 100px;
-}
-.block2 .left{
-    width:100px;
-}
-
-.block2 .important{
-    font-size:18px;
-
-}
-.block3{
-    height:600px;
-    margin:50px;
-}
-.block3 p{
-    font-size: 25px;
-    font-weight: bold; 
-}
-.right{
-    height: 600px;
-   /* display: inline-block;*/
-    width:100px;
-    float:right;
-
-}
-.middle{
-    display: inline-block;
-    width:300px;
-    padding-top:100px;
-    padding-left: 100px;
-    height: 400px;
-}
-.context{
-    height: 280px;
-    
-    padding-top:100px;
-    text-align: center;
-    line-height: 28px;
-    letter-spacing: 1px;
-}
-.block1{
-    height:400px;
-}
-.data{
-   
-    height: 220px;
-    vertical-align: bottom;
-}
-#countyname{
     font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 25px;
-    color: #515151;
-}
-#map{
-    height: 400px;
-    width: 700px;
-   /* margin-left:100px;*/
-    
-}
-#population ,#doctor ,#serve,#rank{
-    letter-spacing: 2px;
-    color: #9F9D9D;
-}
-#serve, #rank{
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 30px;
-    color: #777575;
+    text-align: center;   
 }
 .important{
     font-size: 30px;
@@ -123,19 +26,60 @@ button{
     font-weight: bold;
     color:#F75353;
 }
-table{
-    width:500px;
-    letter-spacing: 2px;
-    line-height: 40px;
+/*************block******************/
+.block{
+    display:inline-flex;
+    width:100%;
+    align-items:center;
+}
+.b1{
+    height: 400px;
+}
+.blockt{
+    padding-left:5%;
+    padding-right: 5%;
+    width:100%;
+
     text-align: center;
-    float:left;
-    margin-left: 10%;
-    margin-top: 100px;
 }
-table:nth-child(2){
-    float:right;
-    margin-right: 10%;
+/****************chart1******************/
+#map1{
+    height: 400px;
+    width:600px;
+    margin-left: 15vw;
+    display:inline-block;
 }
+.data{
+    flex-direction:column;
+    height:400px;
+    width:45vw;
+    text-align: left;
+    padding-top:100px;
+ }
+button{
+    margin-top:5vh;
+    z-index: 100;
+} 
+    .b1 .important{
+        text-align: left;
+    }
+    #countyname{
+        font-weight: bold;
+        letter-spacing: 4px;
+        font-size: 25px;
+        color: #515151;
+    }
+    #population ,#doctor ,#serve,#rank{
+        letter-spacing: 2px;
+        color: #9F9D9D;
+    }
+    #serve, #rank{
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 30px;
+        color: #777575;
+    }
+/****************chart2******************/
 td{
     border:1px solid #BAB8B8;
     color: #676666;
@@ -145,22 +89,17 @@ th{
     line-height: 60px;
     color: #0C8289;
     font-size: 25px;
-    
 }
-.block3 .btn{
-    position: relative;
-    left:5%;
+table{
+    margin:2%;
 }
-.block3 .left{
-    height:600px;
+.b2{
+    margin-top:5%;
+    justify-content:space-around;
 }
-.detail{
-    position: relative;
-    left:5%;
-    color:#A4A4A4;
-    width:300px;
-    margin:5px;
-    letter-spacing: 2px;
+/***************chart3****************/
+.b3{
+    height:725px;
 }
 .bar{
     height:600px;
@@ -168,13 +107,112 @@ th{
     float:right;
     color:#12BFF4;
 }
+/***************chart4****************/
 #googleMap {
     height:700px;
-    width:40%;
-    margin-left:8%;
-  }
-.block4{
-    margin-top:100px;
-    margin-bottom: 100px;
-    color:#A1A1A1
+    width:45%;
+    margin-left:5%;
+}
+/************text block***************/
+.t2{
+    padding-top:5%;
+}
+.t3{
+    padding-bottom:5%;
+}
+
+@media only screen and (max-width: 800px) {
+    /**********css for text************/
+    p,.text{
+        font-size: 15px;
+        width:100%;
+    }
+    .title{
+        font-size:30px;
+        letter-spacing: 10px;
+    }
+    .second-title{
+        font-size: 20px;
+        text-align: center;   
+    }
+    .important{
+        font-size: 30px;
+        letter-spacing: 3px;
+        font-weight: bold;
+    }
+   /******************block***********************/
+   .block{
+        flex-direction:column;
+        width:100%;
+    }
+    /*******************chart1***********************/
+    .b1{
+        height:800px;
+    }
+    #map1{
+        height:400px;;
+        width:100%;
+        margin-left: 0vw;
+    }
+    .data{
+        width:100%;
+        height: 30vw;
+        text-align: center;
+        margin-top:5vw;
+        margin-bottom: 5vw;
+        padding:0px;
+    }
+        .b1 .important{
+            text-align: center;
+        }
+    /*******************chart2***********************/
+    th{
+        font-size: 20px;
+    }
+    table{
+        margin:2%;
+    }
+     /*******************chart3***********************/
+    .detail{
+        display: none;
+    }
+    .b3 button{
+        margin:1px;
+        width:30%;
+    }
+    .left{
+        flex-wrap:wrap;
+        margin-bottom: 3%;
+        display:inline-flex;
+        flex-direction:row;
+        width:100%;
+    }
+    #googleMap {
+        width:100%;
+        height:550px;
+        margin-left:0%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #googleMap {
+        height:350px;
+    }
+}
+@media only screen and (min-width: 800px) {
+    .left{
+        width:35%;
+        height:100%;
+        padding-top:5%;
+        align-items:left;
+        text-align: left;
+        margin-right:5%;
+    }
+    .detail{
+        position: relative;
+        left:2%;
+        color:#A4A4A4;
+        width:100%;
+        margin:5px;
+        letter-spacing: 2px;
+    }
 }

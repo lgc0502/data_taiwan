@@ -17,32 +17,26 @@
     <body>
             
         <div class="text title">看病路遙遙</div>
-        <div class="text second-title">-淺談台灣醫療資源不均問題-</div>
-        
+        <div style="color:#949292;" class="text second-title">-淺談台灣醫療資源不均問題-</div>
         <HR color="#C9C9C9" size="20" align="right">
-        <div class="block1">   
-            <p class="chart-title">【各縣市病床與醫師數量】</p> 
-            <p>
-            通常，在探討醫療資源差異問題時，會先討論病床數和醫事人員數<br>
-            </p> 
-            <div class="left">
-                <div id="map1"></div>   
-            </div>
-            <div class="middle">    
-                <div class="data">
-                        <button type="button" class="btn btn-outline-info text" >病床數</button>
-                        <button type="button" class="btn btn-outline-info text" >醫事人數</button>
-                    <div class="text" id="countyname">臺北市 </div>
-                    <div class="text" id="population">人口數量 : 2695704人</div>
-                    <div class="text" id="doctor">醫師數量 : 9719人</div>       
-                    <div class="text" id="serve">每位醫生服務人數</div><div class="text important" id="servenum">277.36人</div>
-                    <div class="text" id="rank">排名(由資源多到少)</div><div class="text important" id="ranknum">1/22</div>
-                </div>
-            </div>
-            <div class="right">  
-            </div>
-        </div> 
 
+       
+        <p class="second-title">【各縣市病床與醫師數量】</p> 
+        <p>通常，在探討醫療資源差異問題時，會先討論病床數和醫事人員數<br></p> 
+        <div class="block b1">
+            <div id="ex"></div>
+            <div id="map1"></div>     
+            <div class="data text">
+                <button type="button" class="btn btn-outline-info text" >病床數</button>
+                <button type="button" class="btn btn-outline-info text" >醫事人數</button>
+                <div  id="countyname">臺北市 </div>
+                <div  id="population">人口數量 : 2695704人</div>
+                <div  id="doctor">醫師數量 : 9719人</div>       
+                <div  id="serve">每位醫生服務人數</div><div class="text important" id="servenum">277.36人</div>
+                <div  id="rank">排名(由資源多到少)</div><div class="text important" id="ranknum">1/22</div>
+            </div>
+        </div>
+<!-- 
             <table class="text">
                 <thead>
                 <tr>
@@ -103,7 +97,7 @@
                 </tr>
                 </tbody>
             </table>
-        <div class="block2 text">
+        <div class="text">
            <p>
                 <br><br><br>綜合以上衛福部統計資料，嘉義市醫療資源最充足，讓人意外的是第二名居然是花蓮縣。<br>
                 另外，以平均病床數來看，新北市竟成了醫療資源不足地區<br><br>
@@ -116,8 +110,8 @@
         </div>
         <p>	
             </p>
-        <div class="block3 text">
-            <p class="chart-title">【台灣各地區各醫療層級醫院數量統計圖】
+        <div class="text">
+            <p class="second-title">【台灣各地區各醫療層級醫院數量統計圖】
             </p>
             <div class="left">
                 <button type="button" class="btn btn-outline-danger text" value="1" >醫學中心</button>
@@ -135,9 +129,8 @@
             <div class="bar"> 
             </div>
         </div>
-        <div class="block4">
-            <div id="googleMap"></div>
-        </div>
+        <div id="googleMap"></div> -->
+
             <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzoCKZdIHgsaWE-wzgT3JXRCdK4OuMnxQ&callback"></script>
             <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

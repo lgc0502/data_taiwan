@@ -1,11 +1,15 @@
 var svg = d3.select('.bar')
 .append('svg')
-.attr('height', 600)
-.attr('width', 900)
+.attr('height', '100%')
+.attr('width', '100%')
 var rect = svg.append('g')
             .attr('id','rect')
+            .attr('height', '100%')
+            .attr('width', '90%')
 var town = svg.append('g')
             .attr('id','town')
+var screenwidth=4*screen.width/10;
+
 datapath="./hospital.csv"
 
 d3.csv(datapath,function(dataset){
@@ -17,29 +21,25 @@ d3.csv(datapath,function(dataset){
     minBar = d3.min(dataset,function(d){ return +d.center});
     maxBar = d3.max(dataset,function(d){ return +d.center})
     scaleBar = d3.scale.linear()
-        .range([5, 450])
+        .range([5,4*screen.width/10])
         .domain([minBar, maxBar]); //x 的最大值與最小值
 
     rect.selectAll('rect')
     .data(dataset)
     .enter()
     .append('rect')
-    .attr('y',function(d){
-        return 500-10;
+    .attr('y',function(d,i){
+        return i*25;
     })
-    .attr('x',function(d,i){
-        return i*40;
-    })
-    .attr('width',30)
-    .attr('height',0)
+    .attr('x',60)
+    .attr('width',0)
+    .attr('height',20)
     .attr('fill','#F58787')
     .transition()
     .duration(2000)
-    .attr('y',function(d){
-        return 500-scaleBar(d.center);
-    })
-    .attr('height',function(d){
-        return scaleBar(d.center);
+    .attr('width',function(d){
+        console.log(scaleBar(d.center));
+        return scaleBar(+d.center);
     })
 
     town.selectAll('text')
@@ -47,30 +47,25 @@ d3.csv(datapath,function(dataset){
     .enter()
     .append('text')
     .text(function(d){ return d.county})
-    .attr('x',function(d,i){
-        return i*40+13;
-    })
+    .attr('x',0)
     .attr('y',function(d,i){
-        return 500+10;
+        return i*25+15;
     })
-    .attr('writing-mode', 'vertical-lr')
-    .attr('font-size','20px')
+    .attr('font-size','15px')
 
     rect.selectAll('text')
     .data(dataset)
     .enter()
     .append('text')
     .text(function(d){ return d.center;})
-    .attr('x',function(d,i){
-        return i*40+10;
-    })
+    .attr('x',70)
     .attr('y',function(d,i){
-        return 500-10;
+        return i*25+15;
     })
     .transition()
     .duration(2000)
-    .attr('y',function(d,i){
-        return 500-scaleBar(d.center)-10;
+    .attr('x',function(d){
+        return scaleBar(d.center)+70;
     })
     .tween("text", function(d,i) {
         var that = d3.select(this),
@@ -84,28 +79,23 @@ d3.csv(datapath,function(dataset){
         minBar = d3.min(dataset,function(d){ return +d.local});
         maxBar = d3.max(dataset,function(d){ return +d.local})
         scaleBar = d3.scale.linear()
-        .range([20, 450])
+        .range([20, 4*screen.width/10])
         .domain([minBar, maxBar]); 
 
         rect.selectAll('rect')
         .data(dataset)
         .transition()
         .duration(500)
+        .attr('x',60)
         .attr('y',function(d,i){
-            return 500;
+            return i*25;
         })
-        .attr('x',function(d,i){
-            return i*40;
-        })
-        .attr('width',30)
-        .attr('height',5)
+        .attr('width',0)
+        .attr('height',20)
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.local);
-        })
-        .attr('height',function(d){
-            return scaleBar(d.local);
+        .attr('width',function(d){
+            return scaleBar(+d.local);
 
         })
         .attr('fill','#81C853')
@@ -115,9 +105,9 @@ d3.csv(datapath,function(dataset){
         .text(function(d){ return d.local})
         .transition()
         .duration(500)
-        .attr('y',500-10)
-        .attr('x',function(d,i){
-            return i*40+10;
+        .attr('x',70)
+        .attr('y',function(d,i){
+            return i*25+15;
         })
         .text('0')
         .tween("text", function(d,i) {
@@ -127,8 +117,8 @@ d3.csv(datapath,function(dataset){
           })
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.local)-10;
+        .attr('x',function(d){
+            return scaleBar(d.local)+70;
         })
         .tween("text", function(d,i) {
             var that = d3.select(this),
@@ -142,28 +132,23 @@ d3.csv(datapath,function(dataset){
         minBar = d3.min(dataset,function(d){ return +d.region});
         maxBar = d3.max(dataset,function(d){ return +d.region})
         scaleBar = d3.scale.linear()
-        .range([5, 450])
+        .range([5,4*screen.width/10])
         .domain([minBar, maxBar]); 
 
         rect.selectAll('rect')
         .data(dataset)
         .transition()
         .duration(500)
+        .attr('x',60)
         .attr('y',function(d,i){
-            return 500;
+            return i*25;
         })
-        .attr('x',function(d,i){
-            return i*40;
-        })
-        .attr('width',30)
-        .attr('height',5)
+        .attr('width',0)
+        .attr('height',20)
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.region);
-        })
-        .attr('height',function(d){
-            return scaleBar(d.region);
+        .attr('width',function(d){
+            return scaleBar(+d.region);
 
         })
         .attr('fill','#EEC328')
@@ -173,9 +158,9 @@ d3.csv(datapath,function(dataset){
         .text(function(d){ return d.region})
         .transition()
         .duration(500)
-        .attr('y',500-10)
-        .attr('x',function(d,i){
-            return i*40+10;
+        .attr('x',70)
+        .attr('y',function(d,i){
+            return i*25+15;
         })
         .text('0')
         .tween("text", function(d,i) {
@@ -185,8 +170,8 @@ d3.csv(datapath,function(dataset){
           })
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.region)-10;
+        .attr('x',function(d){
+            return scaleBar(d.region)+70;
         })
         .tween("text", function(d,i) {
             var that = d3.select(this),
@@ -196,11 +181,11 @@ d3.csv(datapath,function(dataset){
           })
     });
 
-    d3.select('.block3').select('.btn-outline-info').on('click',function(){
+    d3.select('.b3').select('.btn-outline-info').on('click',function(){
         minBar = d3.min(dataset,function(d){ return +d.hos});
         maxBar = d3.max(dataset,function(d){ return +d.hos})
         scaleBar = d3.scale.linear()
-        .range([5, 450])
+        .range([5, 4*screen.width/10])
         .domain([minBar, maxBar]); 
         
         rect.selectAll('rect')
@@ -208,21 +193,15 @@ d3.csv(datapath,function(dataset){
         .transition()
         .duration(500)
         .attr('y',function(d,i){
-            return 500;
+            return i*25;
         })
-        .attr('x',function(d,i){
-            return i*40;
-        })
-        .attr('width',30)
-        .attr('height',5)
+        .attr('x',60)
+        .attr('width',0)
+        .attr('height',20)
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.hos);
-        })
-        .attr('height',function(d){
+        .attr('width',function(d){
             return scaleBar(d.hos);
-
         })
         .attr('fill','#009D91')
 
@@ -231,9 +210,9 @@ d3.csv(datapath,function(dataset){
         .text(function(d){ return d.hos})
         .transition()
         .duration(500)
-        .attr('y',500-10)
-        .attr('x',function(d,i){
-            return i*40+10;
+        .attr('x',70)
+        .attr('y',function(d,i){
+            return i*25+15;
         })
         .text('0')
         .tween("text", function(d,i) {
@@ -243,8 +222,8 @@ d3.csv(datapath,function(dataset){
           })
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.hos)-10;
+        .attr('x',function(d){
+            return scaleBar(d.hos)+70;
         })
         .tween("text", function(d,i) {
             var that = d3.select(this),
@@ -254,11 +233,11 @@ d3.csv(datapath,function(dataset){
           })
     });
 
-    d3.select('.block3').select('.btn-outline-primary').on('click',function(){
+    d3.select('.b3').select('.btn-outline-primary').on('click',function(){
         minBar = d3.min(dataset,function(d){ return +d.clinic});
         maxBar = d3.max(dataset,function(d){ return +d.clinic})
         scaleBar = d3.scale.linear()
-        .range([20, 450])
+        .range([20, 4*screen.width/10])
         .domain([minBar, maxBar]); 
         
         rect.selectAll('rect')
@@ -266,21 +245,15 @@ d3.csv(datapath,function(dataset){
         .transition()
         .duration(500)
         .attr('y',function(d,i){
-            return 500;
+            return i*25;
         })
-        .attr('x',function(d,i){
-            return i*40;
-        })
-        .attr('width',30)
-        .attr('height',5)
+        .attr('x',60)
+        .attr('width',0)
+        .attr('height',20)
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.clinic);
-        })
-        .attr('height',function(d){
+        .attr('width',function(d){
             return scaleBar(d.clinic);
-
         })
         .attr('fill','#12BFF4')
 
@@ -289,9 +262,9 @@ d3.csv(datapath,function(dataset){
         .text(function(d){ return d.clinic})
         .transition()
         .duration(500)
-        .attr('y',500-10)
-        .attr('x',function(d,i){
-            return i*40;
+        .attr('x',70)
+        .attr('y',function(d,i){
+            return i*25+15;
         })
         .text('0')
         .tween("text", function(d,i) {
@@ -301,8 +274,8 @@ d3.csv(datapath,function(dataset){
           })
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.clinic)-10;
+        .attr('x',function(d){
+            return scaleBar(d.clinic)+70;
         })
         .tween("text", function(d,i) {
             var that = d3.select(this),
@@ -312,11 +285,11 @@ d3.csv(datapath,function(dataset){
           })
     });
 
-    d3.select('.block3').select('.btn-outline-danger').on('click',function(){
+    d3.select('.b3').select('.btn-outline-danger').on('click',function(){
         minBar = d3.min(dataset,function(d){ return +d.center});
         maxBar = d3.max(dataset,function(d){ return +d.center})
         scaleBar = d3.scale.linear()
-        .range([5, 450])
+        .range([5, 4*screen.width/10])
         .domain([minBar, maxBar]); 
         
         rect.selectAll('rect')
@@ -324,21 +297,15 @@ d3.csv(datapath,function(dataset){
         .transition()
         .duration(500)
         .attr('y',function(d,i){
-            return 500;
+            return i*25;
         })
-        .attr('x',function(d,i){
-            return i*40;
-        })
-        .attr('width',30)
-        .attr('height',5)
+        .attr('x',60)
+        .attr('width',0)
+        .attr('height',20)
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.center);
-        })
-        .attr('height',function(d){
+        .attr('width',function(d){
             return scaleBar(d.center);
-
         })
         .attr('fill','#F58787')
 
@@ -347,9 +314,9 @@ d3.csv(datapath,function(dataset){
         .text(function(d){ return d.center})
         .transition()
         .duration(500)
-        .attr('y',500-10)
-        .attr('x',function(d,i){
-            return i*40+10;
+        .attr('x',70)
+        .attr('y',function(d,i){
+            return i*25+15;
         })
         .text('0')
         .tween("text", function(d,i) {
@@ -359,8 +326,8 @@ d3.csv(datapath,function(dataset){
           })
         .transition()
         .duration(1500)
-        .attr('y',function(d,i){
-            return 500-scaleBar(d.center)-10;
+        .attr('x',function(d){
+            return scaleBar(d.center)+70;
         })
         .tween("text", function(d,i) {
             var that = d3.select(this),
